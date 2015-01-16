@@ -17,6 +17,9 @@ namespace Mathgician
             if ("Integers" == desiredMaths)
             {
                 PrintIntegers();
+            } else if("Fibonacci" == desiredMaths)
+            {
+                PrintFibonacciSequence();
             }
             else
             {
@@ -24,6 +27,21 @@ namespace Mathgician
             }
             Console.WriteLine("Press Any Key To Exit...");
             Console.ReadKey();
+        }
+
+        private static void PrintFibonacciSequence()
+        {
+            // 1, 1, 3, 5, 8, 13
+            int previous = 0;
+            int current = 1;
+            while (true)
+            {
+                Console.WriteLine(current);
+                System.Threading.Thread.Sleep(100);
+                int newValue = previous + current;
+                previous = current;
+                current = newValue;
+            }
         }
 
         private static void PrintIntegers()
